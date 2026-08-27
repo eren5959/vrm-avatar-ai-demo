@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>VRM Avatar AI Demo</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>VRM Avatar AI — Chat Demo</h1>
+      <p class="muted">Upload a VRM, paste any AI API key (browser-only), and chat. Mobile-friendly.</p>
+    </header>
+
+    <main>
+      <section class="left">
+        <div id="viewer" class="viewer">
+          <canvas id="canvas"></canvas>
+          <div id="overlayNotice" class="overlay">Upload a VRM to start</div>
+        </div>
+
+        <div class="controls">
+          <label class="file">VRM file
+            <input id="vrmFile" type="file" accept=".vrm,.gltf,.glb" />
+          </label>
+
+          <label>AI Provider
+            <select id="provider">
+              <option value="openai">OpenAI-compatible</option>
+              <option value="custom">Custom endpoint</option>
+            </select>
+          </label>
+
+          <label>API Key (browser use only)
+            <input id="apiKey" type="password" placeholder="Paste API key here" />
+          </label>
+
+          <label id="customEndpointLabel" style="display:none">Custom endpoint (full URL)
+            <input id="customEndpoint" placeholder="https://..." />
+          </label>
+
+          <div class="warning">Warning: keys you paste are used from your browser. Do not paste sensitive production keys.</div>
+        </div>
+      </section>
+
+      <section class="right">
+        <div class="chat">
+          <div id="chatLog" class="chatLog"></div>
+          <div class="chatInput">
+            <input id="message" placeholder="Type a message to the avatar..." />
+            <button id="send">Send</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <small>Built as a demo — upload and replace VRMs anytime (ephemeral, client-side only).</small>
+    </footer>
+  </div>
+
+  <script type="module" src="/app.js"></script>
+</body>
+</html>
