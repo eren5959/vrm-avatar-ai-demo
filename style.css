@@ -1,0 +1,33 @@
+/* Mobile-friendly simple styles */
+:root{--bg:#0f1720;--card:#111827;--muted:#9ca3af;--accent:#7c3aed;color-scheme: dark}
+*{box-sizing:border-box}
+html,body,#app{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial}
+body{background:linear-gradient(180deg, #071422, #001018);color:#e6eef6}
+header{padding:12px 16px}
+header h1{margin:0;font-size:1.1rem}
+header .muted{color:var(--muted);margin-top:6px;font-size:0.85rem}
+main{display:flex;flex-direction:column;padding:12px;gap:12px}
+.viewer{position:relative;width:100%;height:320px;border-radius:12px;overflow:hidden;background:linear-gradient(180deg,#02121a,#041527);display:flex;align-items:center;justify-content:center}
+.viewer canvas{width:100%;height:100%;display:block}
+.overlay{position:absolute;color:var(--muted);font-size:0.95rem}
+.controls{display:flex;flex-direction:column;gap:8px;margin-top:10px}
+.controls label{font-size:0.9rem;color:var(--muted);display:flex;flex-direction:column;gap:6px}
+.controls input[type=password], .controls input[type=text], .controls input, .controls select{Padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:rgba(255,255,255,0.02);color:inherit}
+.warning{color:#fca5a5;font-size:0.8rem;padding:6px}
+.chat{background:rgba(255,255,255,0.02);border-radius:12px;padding:8px;display:flex;flex-direction:column;height:320px}
+.chatLog{flex:1;overflow:auto;padding:6px;display:flex;flex-direction:column;gap:8px}
+.chatMessage{padding:8px;border-radius:8px;max-width:85%}
+.chatMessage.user{background:rgba(124,58,237,0.12);align-self:flex-end}
+.chatMessage.ai{background:rgba(255,255,255,0.03);align-self:flex-start}
+.chatInput{display:flex;gap:8px;margin-top:8px}
+.chatInput input{flex:1;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
+.chatInput button{padding:10px 14px;border-radius:10px;border:none;background:var(--accent);color:white}
+footer{padding:12px 16px;color:var(--muted);font-size:0.85rem}
+
+/* Desktop: two columns */
+@media(min-width:900px){
+  main{flex-direction:row}
+  .left{flex:1}
+  .right{width:420px}
+  .viewer{height:520px}
+}
